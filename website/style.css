@@ -1,0 +1,125 @@
+body {
+  background: url(images/bg-weather.png) no-repeat;
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.entry {
+  background: rgba(59, 74, 107, 0.4);
+  width: 50%;
+  height: 30%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+.entry h4{
+  margin-bottom: 10px;
+}
+.form {
+  background: rgba(135, 162, 175, 0.48);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.8px);
+  -webkit-backdrop-filter: blur(1.8px);
+  border: 1px solid rgba(135, 162, 175, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.info .summery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 3rem;
+}
+#weather-icon{
+  color: #FFD700;
+}
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+  display: block;
+  font-size: 27px;
+}
+
+input {
+  height: 60px;
+  width: 320px;
+  background: transparent;
+  box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, 0.69);
+  border: 1px #b0e0e6 solid;
+  border-radius: 8px;
+  color: #f0d43a;
+  font-size: 20px;
+  padding: 3px;
+  font-family: "Oswald", sans-serif;
+}
+
+button {
+  width: 400px;
+  height: 100px;
+  background: #1B263B;
+  color: #FFD700;
+  border-radius: 20px;
+  font-size: 26px;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  box-shadow: 2px 4px 5px #444;
+}
+h1 {
+  font-size: 36px;
+}
+
+textarea {
+  background: transparent;
+  box-shadow: 1px 2px 5px -1px rgba(0, 0, 0, 0.69);
+  border: 1px #b0e0e6 solid;
+  border-radius: 8px;
+  color: #FFD700;
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: #FFD700;
+  font-family: "Oswald", sans-serif;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #FFD700;
+  font-family: "Oswald", sans-serif;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #FFD700;
+  font-family: "Oswald", sans-serif;
+}
