@@ -2,8 +2,10 @@
 const apiKey = "db7719bf98220e1ea879ff8deb468f2a&units=imperial";
 
 // Create a new date instance dynamically with JS
+var months = ["Jan", "Feb", "Mar", "Aprl", "May", "Jun", "Jul",
+  "Aug", "Sep", "Oct", "Nov", "Dec"];
 let d = new Date();
-let newDate = d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear();
+let newDate = months[d.getMonth()] + " / " + d.getDate() + " / " + d.getFullYear();
 
 document.getElementById("generate").addEventListener("click", preformAction);
 
