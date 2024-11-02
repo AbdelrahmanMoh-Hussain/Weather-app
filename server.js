@@ -26,15 +26,12 @@ app.listen(port, () => {
 });
 
 app.get('/all', (req, res) => {
-    console.log("GET: " + projectData);
     res.send(projectData);
 })
 app.post('/add', (req, res) => {
     const newData = req.body;
-    console.log(newData);
     projectData.temp = newData.temp;
     projectData.date = newData.date;
     projectData.content = newData.content;
-    console.log(projectData);
     res.send({success: true});
 })

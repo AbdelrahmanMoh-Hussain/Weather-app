@@ -8,7 +8,6 @@ let newDate = d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear();
 document.getElementById("generate").addEventListener("click", preformAction);
 
 function preformAction() {
-  console.log("CLICKED");
   getCoordinatesByZipCode().then(function (coordinates) {
     getDataByCoordinates(coordinates).then(function (data) {
       postData("/add", data).then(function () {
@@ -20,14 +19,12 @@ function preformAction() {
 
 const getCoordinatesByZipCode = async () => {
   const zipcode = document.getElementById("zip").value;
-  console.log("ZIP: " + zipcode);
   const response = await fetch(
     `http://api.openweathermap.org/geo/1.0/zip?zip=${zipcode},US&appid=${apiKey}`
   );
 
   try {
     const coordinates = await response.json();
-    console.log(coordinates);
     document.getElementById('city').textContent = coordinates.name;
     return coordinates;
   } catch (error) {
@@ -36,22 +33,18 @@ const getCoordinatesByZipCode = async () => {
 };
 
 const getDataByCoordinates = async (coordinates) => {
-  console.log("LAT: " + coordinates.lat);
-  console.log("LON: " + coordinates.lon);
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`
   );
 
   try {
     const weatherInfo = await response.json();
-    console.log(weatherInfo);
-    console.log(weatherInfo.main);
+
     const content = document.getElementById("feelings").value;
     const temp = weatherInfo.main.temp;
     document.getElementById('weather-degree').textContent = `${temp}°`
 
     const weartherIcon = document.getElementById('weather-icon');
-    console.log(weartherIcon);
     weartherIcon.classList = [];
     weartherIcon.classList.add('fa-solid') 
     if(+temp > 25){
@@ -72,8 +65,6 @@ const getDataByCoordinates = async (coordinates) => {
 };
 
 const postData = async (url, data) => {
-  console.log("POSTED DATA: " + data);
-  console.log(data);
   const response = await fetch(url, {
     method: "POST",
     credentials: "same-origin",
@@ -84,9 +75,7 @@ const postData = async (url, data) => {
   });
 
   try {
-    console.log("HERE");
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.log(error);
@@ -98,7 +87,6 @@ const retrieveDataAndUpdateUI = async () => {
   try {
     // Transform into JSON
     const allData = await request.json();
-    console.log(allData);
     // Write updated data to DOM elements
     document.getElementById("temp").innerHTML ='Temperature: ' +
       Math.round(allData.temp) + " degrees";
