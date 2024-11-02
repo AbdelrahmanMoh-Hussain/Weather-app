@@ -35,6 +35,9 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+#generate{
+  cursor: pointer;
+}
 .info {
   display: flex;
   flex-direction: column;
@@ -49,6 +52,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
   font-size: 3rem;
 }
 #weather-icon{
